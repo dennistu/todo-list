@@ -5,10 +5,10 @@ import { Task } from '../models/task';
 import { StorageService } from './storage.service';
 
 export enum TaskEventType{
-  INIT,
-  ADDED,
-  DELETED,
-  UPDATED
+  INIT = "initiated",
+  ADDED = "added",
+  DELETED = "deleted",
+  UPDATED = "updated"
 }
 
 export class TaskEvent{
