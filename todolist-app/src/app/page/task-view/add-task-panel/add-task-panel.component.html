@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-title>
+        <span>Add a new task</span>
+        
+    </mat-card-title>
+    <mat-card-content>
+        <form #newTaskForm="ngForm">
+            <div>
+                <mat-form-field class="input-field">
+                    <mat-label>Title</mat-label>
+                    <input id="taskTitle" matInput placeholder="Meet a friend" required [(ngModel)]="newItemInternal.title" name="title">
+                </mat-form-field>
+                <mat-form-field class="input-field">
+                    <mat-label>Description</mat-label>
+                    <textarea id="taskDescription" matInput placeholder="Location is ..." [(ngModel)]="newItemInternal.description" name="description"></textarea>
+                </mat-form-field>
+            </div>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="addTask()" [disabled]="!newTaskForm.form.valid" >Add</button>
+    </mat-card-actions>
+</mat-card>
