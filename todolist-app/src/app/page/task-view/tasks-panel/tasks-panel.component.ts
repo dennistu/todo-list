@@ -12,17 +12,17 @@ export class TasksPanelComponent implements OnInit {
 
   constructor(private taskService: TaskService) {
     this.taskService.TaskEvent$
-      .pipe(map(taskEvent => this.taskService.getTasks() ))
-      .subscribe(newTasks => this.tasks = newTasks)
-   }
+      .pipe(map(_ => this.taskService.getTasks()))
+      .subscribe(newTasks => this.tasks = newTasks);
+  }
 
-   displayedColumns: string[] = ['title', 'description', 'action'];
+  displayedColumns: string[] = ['title', 'description', 'action'];
   tasks: Task[] = [];
 
   ngOnInit(): void {
   }
 
-  deleteTask(id: string){
+  deleteTask(id: string) {
     this.taskService.deleteTask(id);
   }
 

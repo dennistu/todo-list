@@ -8,8 +8,7 @@ import { TaskService } from 'src/app/services/task-service.service';
   styleUrls: ['./add-task-panel.component.css']
 })
 export class AddTaskPanelComponent implements OnInit {
-  @Input() newItemInternal: NewTask = {title: "", description: "" };
-  @Output() newItemInternalChange = new EventEmitter<NewTask>();
+  @Input() newItemInternal: NewTask = new NewTask();
 
   constructor(private taskService: TaskService) { }
 
@@ -18,6 +17,6 @@ export class AddTaskPanelComponent implements OnInit {
 
   addTask() {
     this.taskService.addTask(this.newItemInternal);
-    this.newItemInternal = {title: "", description: ""};
+    this.newItemInternal = new NewTask();
   }
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NewTask } from 'src/app/models/new-task';
 
 @Component({
   selector: 'app-task-view',

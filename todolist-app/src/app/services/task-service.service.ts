@@ -6,7 +6,6 @@ import { StorageService } from './storage.service';
 
 export enum TaskEventType{
   INIT,
-  INIT_LOADED,
   ADDED,
   DELETED,
   UPDATED
